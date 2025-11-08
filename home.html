@@ -1,0 +1,22 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SABAR Home</title>
+<link rel="stylesheet" href="css/style.css"></head><body>
+<div class="header"><img src="images/logo.png"><h1>SABAR</h1></div>
+<div class="container">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+    <div style="font-size:18px" id="welcome"></div>
+    <div><button class="btn" onclick="logout()">Logout</button></div>
+  </div>
+  <div class="filters">
+    <div class="search"><input id="searchInput" placeholder="Search shops or services"></div>
+    <div class="select"><select id="typeFilter"><option value=''>All</option><option value='Boys'>Boys</option><option value='Girls'>Girls</option><option value='Unisex'>Unisex</option></select>
+    <select id="sortFilter"><option value=''>Sort</option><option value='priceLow'>Price Low→High</option><option value='priceHigh'>Price High→Low</option></select></div>
+  </div>
+  <section id="shopList" class="shop-list"></section>
+</div>
+<div class="bottom-nav">
+  <div class="nav-item" onclick="location.href='home.html'">🏠<div>Home</div></div>
+  <div class="nav-item" onclick="location.href='bookings.html'">📆<div>Bookings</div></div>
+  <div class="nav-item" onclick="location.href='profile.html'">👤<div>Profile</div></div>
+  <div class="nav-item" onclick="location.href='admin.html'">⚙️<div>Admin</div></div>
+</div>
+<script src="js/data.js"></script><script src="js/home.js"></script></body></html>

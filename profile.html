@@ -1,0 +1,12 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Profile</title>
+<link rel="stylesheet" href="css/style.css"></head><body>
+<div class="header"><img src="images/logo.png"><h1>SABAR</h1></div>
+<main class="container"><div id="profileBox" class="admin-box"></div></main>
+<script>
+document.addEventListener('DOMContentLoaded', ()=>{
+  const cur = localStorage.getItem('sabarCurrent'); const users = JSON.parse(localStorage.getItem('sabarUsers')||'{}'); if(!cur){ location.href='login.html'; return;}
+  const u = users[cur]; document.getElementById('profileBox').innerHTML = `<h3>${u.name}</h3><p>${cur}</p><button onclick="logout()">Logout</button>`;
+});
+function logout(){ localStorage.removeItem('sabarCurrent'); location.href='login.html'; }
+</script>
+</body></html>

@@ -1,0 +1,12 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>My Bookings</title>
+<link rel="stylesheet" href="css/style.css"></head><body>
+<div class="header"><img src="images/logo.png"><h1>SABAR</h1></div>
+<main class="container"><h2>My Bookings</h2><div id="list"></div></main>
+<script>
+document.addEventListener('DOMContentLoaded', ()=>{
+  const arr = JSON.parse(localStorage.getItem('sabarBookings')||'[]'); const el = document.getElementById('list');
+  if(arr.length===0) el.innerHTML = '<p>No bookings yet.</p>';
+  arr.forEach(b=> el.innerHTML += `<div class="detail-box"><b>${b.shop}</b><p>${b.service||''} • ${b.date} ${b.time}</p><p>${b.name} • ${b.phone}</p></div>`);
+});
+</script>
+</body></html>
